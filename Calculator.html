@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+    color: white;
+  }
+  body{
+    background-image: linear-gradient(to right,black,grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+    .calculator{
+      margin-top: 100px;
+      height: 300px;
+      width: 200px;
+      box-shadow: 10px 10px 10px  red;
+  
+    }
+    input{
+      height: 50px;
+      color: white;
+      background-color: transparent;
+    }
+    #operator{
+      background-color: transparent;
+    }
+    #operator-a{
+      background-color: orange;
+    }
+    #equiv{
+      background-color: orange;
+    }
+    button{
+      padding: 10px;
+      border-radius: 30px;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>    
+     <div class="calculator">
+      <input id="d" readonly><br>
+      <button onclick="a('7')" id="operator">7</button>
+      <button onclick="a('8')" id="operator">8</button>
+      <button onclick="a('9')" id="operator">9</button>
+      <button onclick="a('/')" id="operator-a">/</button><br>
+      <button onclick="a('4')" id="operator">4</button>
+      <button onclick="a('5')" id="operator">5</button>
+      <button onclick="a('6')" id="operator">6</button>
+      <button onclick="a('*')" id="operator-a">*</button><br>
+      <button onclick="a('1')" id="operator">1</button>
+      <button onclick="a('2')" id="operator">2</button>
+      <button onclick="a('3')" id="operator">3</button>
+      <button onclick="a('-')" id="operator-a">-</button><br>
+      <button onclick="a('00')" id="operator">00</button>
+      <button onclick="a('0')" id="operator">0</button>
+      <button onclick="a('.')" id="operator">.</button>
+      <button onclick="a('+')" id="operator-a">+</button>
+      <button onclick="ac()" id="operator-a">ac</button>
+      <button onclick="del()" id="operator-a">del</button>
+      <button onclick="r()" id="equiv">=</button>
+     </div>
+     <script>
+       let d=document.getElementById('d');
+       
+       
+        function a(input){
+         d.value += input;
+       };
+       function ac(){
+         d.value="";
+       };
+       function del(){
+         d.value= d.value.substring(0,d.value.length-1);
+       };
+       function r(){
+        try{
+         d.value=eval(d.value);
+        }
+        catch(error){
+          d.value="error";
+        }
+       }
+     </script>
+</body>
+
+        </html>
